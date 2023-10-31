@@ -25,4 +25,8 @@ export interface ParallaxBannerProps
    * Determines if all internal layers will be disabled
    */
   disabled?: boolean;
+  /**
+   * Determines if children that are not in a layer are rendered regularly or with the renderchildren() function
+   */
+  regularChildren?: boolean;
 }

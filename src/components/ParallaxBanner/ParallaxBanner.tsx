@@ -28,6 +28,7 @@ export const ParallaxBanner = (
     disabled: disableAllLayers,
     style: rootStyle,
     layers = [],
+    regularChildren,
     ...rootRest
   } = props;
 
@@ -75,7 +76,11 @@ export const ParallaxBanner = (
       {/* Using the `layers` prop to define children */}
       {renderLayers()}
       {/* Using children to compose layers */}
-      {renderChildren()}
+      {
+        regularChildren
+        ? React.Children.map(props.children, (child) => child)
+        : renderChildren()
+      }
     </div>
   );
 };
